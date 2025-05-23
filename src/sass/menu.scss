@@ -1,0 +1,46 @@
+@import 'vars';
+
+
+  .hamburger-menu {
+  position: relative;
+}
+
+.hamburger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bar {
+  width: 16px;
+  height: 2px;
+  background-color: black;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.menu {
+  position: fixed;
+  top:0;
+  left: 0;
+  width:100vw;
+  height:100vh;
+  z-index:200;
+  background: rgba($red,0.9);
+  border: 1px solid #ccc;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow-y:scroll;
+
+    a {
+      color:white;
+    }
+
+}

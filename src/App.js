@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from 'react';
-// import ItemList from './components/itemList';
-// import Teaser from './components/teaser';
-// import FullContent from './components/fullContent';
+import './css/normalize.css';
+import './css/skeleton.css';
+import './css/main.css';
 import ContentList from './components/contentList';
+import Menu from './components/menu';
 
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+
+import FullContent from './components/fullContent';
+import { sluggify } from './functions';
 
 
 function App() {
@@ -22,7 +33,24 @@ function App() {
   }, []);
 
   return (
-       <ContentList items={items} />
+    <>
+    <Menu />
+        <Router>
+      <Routes>
+        {/* List View */}
+        <Route path="/" element={<ContentList items={items} />} />
+
+        {/* Full Views */}
+        {items.map(item => (
+          <Route
+            key={item._id}
+            path={`/${sluggify(item['Student Name'])}`}
+            element={<FullContent content={item} />}
+          />
+        ))}
+      </Routes>
+    </Router>
+    </>
   );
 }
 
