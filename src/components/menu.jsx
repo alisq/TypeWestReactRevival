@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { sluggify } from '../functions';
 
 
-function Menu() {
+function Menu({ items, onAboutClick }) {
   const [open, setOpen] = useState(false);
+    
+
 
   return (
     <section className='header'>
@@ -11,18 +14,38 @@ function Menu() {
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
-        Revivals
+        
       </button>
+      Revivals
+      </div>
+      <div className="center">
+        <a href="/">TypeWest 2025 Online Cohort</a>
+      </div>
+      <div className='right'>
+        <button onClick={onAboutClick}>About</button>
+      </div>
 
       {open && (
         <nav className="menu">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/projects">Projects</a>
-          <a href="/contact">Contact</a>
+            <section className="header">
+            <button className="hamburger-button close" onClick={() => setOpen(!open)}>
+                <span className="bar bar1"></span>
+                <span className="bar bar2"></span>
+            </button>
+          <div className="center"><a href="/">Home</a></div>
+          <div className="right">About</div>
+          </section>
+          {items.map(item =>(
+
+            <div>
+                <a href={sluggify(item["Student Name"])}><h3 className={"center "+sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
+                <p className='center'>by {item["Student Name"]}</p>
+                </a>
+            </div>
+          ))}
         </nav>
       )}
-    </div>
+    
     </section>
   );
 }

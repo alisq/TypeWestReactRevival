@@ -166,6 +166,13 @@ p {
   }
 
 
+  #footer {
+    background:$red;
+    color:white;
+    min-height:100vh;
+  }
+
+
   /* Larger than phablet */
 @media (max-width: 550px) {
 

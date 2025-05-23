@@ -7,9 +7,27 @@
   border: none;
   cursor: pointer;
   padding: 10px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 4px;
+  position: relative;
+  top: -0.55em;
+}
+.hamburger-button.close {
+  top: 0.3em;
+  gap: 0;
+}
+.hamburger-button.close:hover {
+  background: none;
+}
+.hamburger-button.close .bar.bar1 {
+  transform-origin: 50% 50%;
+  transform: rotate(45deg);
+}
+.hamburger-button.close .bar.bar2 {
+  transform-origin: 50% 50%;
+  margin-top: -2px;
+  transform: rotate(-45deg);
 }
 
 .bar {
@@ -29,7 +47,6 @@
   z-index: 200;
   background: rgba(255, 28, 23, 0.9);
   border: 1px solid #ccc;
-  padding: 1em;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -288,6 +305,12 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 1em;
+}
+
+#footer {
+  background: #FF1C17;
+  color: white;
+  min-height: 100vh;
 }
 
 /* Larger than phablet */

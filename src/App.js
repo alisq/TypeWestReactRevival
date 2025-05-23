@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './css/normalize.css';
 import './css/skeleton.css';
 import './css/main.css';
 import ContentList from './components/contentList';
 import Menu from './components/menu';
+import Footer from './components/footer';
 
 
 import {
@@ -32,10 +33,19 @@ function App() {
       
   }, []);
 
+     const footerRef = useRef(null);
+
+  const scrollToFooter = () => {
+    footerRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+
   return (
     <>
-    <Menu />
-        <Router>
+    <Router>
+      
+     <Menu onAboutClick={scrollToFooter} items={items}/>
+        
       <Routes>
         {/* List View */}
         <Route path="/" element={<ContentList items={items} />} />
@@ -49,7 +59,9 @@ function App() {
           />
         ))}
       </Routes>
+        <Footer ref={footerRef} />
     </Router>
+    
     </>
   );
 }

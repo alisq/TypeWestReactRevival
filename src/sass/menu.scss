@@ -10,9 +10,32 @@
   border: none;
   cursor: pointer;
   padding: 10px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 4px;
+  position: relative;
+  top: -0.55em;
+  
+  &.close {
+    top:0.30em;
+    gap: 0;
+
+    &:hover {
+      background:none;
+    }
+
+    & .bar.bar1 {
+      transform-origin:50% 50%;
+      transform:rotate(45deg)
+    }
+
+    & .bar.bar2 {
+      transform-origin:50% 50%;
+      margin-top:-2px;
+      transform:rotate(-45deg)
+    }
+
+  }
 }
 
 .bar {
@@ -32,7 +55,7 @@
   z-index:200;
   background: rgba($red,0.9);
   border: 1px solid #ccc;
-  padding: 1em;
+  
   display: flex;
   flex-direction: column;
   gap: 0.5em;
