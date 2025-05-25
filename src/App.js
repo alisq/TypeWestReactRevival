@@ -5,13 +5,15 @@ import './css/main.css';
 import ContentList from './components/contentList';
 import Menu from './components/menu';
 import Footer from './components/footer';
+import { shuffle } from './functions';
 
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+// } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 import FullContent from './components/fullContent';
@@ -26,7 +28,7 @@ function App() {
     fetch('https://tw2025.iamasq.works/api/content/items/Revival')
       .then(res => res.json())
       .then(data => {setItems(data)
-// console.log(data)
+ shuffle(data)
 
       })
       .catch(err => console.error(err));

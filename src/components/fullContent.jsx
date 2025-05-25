@@ -3,7 +3,7 @@ import { sluggify } from '../functions';
 import Image from './image';
 import LoadFonts from './loadFonts';
 function FullContent({ content, onClose }) {
-   console.log(content)
+  //  console.log(content)
 
 
 

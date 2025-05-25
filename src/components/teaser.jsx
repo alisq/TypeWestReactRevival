@@ -1,9 +1,27 @@
+import React from 'react';
 import { sluggify } from '../functions';
 import { Link } from 'react-router-dom';
 
 // Teaser.jsx
 function Teaser({ item, onExpand }) {
-  // console.log(item)
+
+
+
+  const divRef = React.useRef(null);
+
+  const handleClick = () => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+
+    if (divRef.current && selection) {
+      range.selectNodeContents(divRef.current);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  };
+
+
+  
   return (
     
 
@@ -18,7 +36,12 @@ function Teaser({ item, onExpand }) {
             <div className="contain-overflow">
             
         
-                <div className={"text "+sluggify(item["Student Name"])} contentEditable >
+                <div 
+                    className={"text "+sluggify(item["Student Name"])} 
+                    ref={divRef}
+                    contentEditable
+                    onClick={handleClick}
+                    suppressContentEditableWarning={true}>
                     {item["Homepage Tester Text"]}
                 </div>
         

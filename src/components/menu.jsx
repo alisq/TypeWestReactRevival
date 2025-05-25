@@ -19,10 +19,10 @@ function Menu({ items, onAboutClick }) {
       Revivals
       </div>
       <div className="center">
-        <a href="/">TypeWest 2025 Online Cohort</a>
+        <a href="#">TypeWest 2025 Online Cohort</a>
       </div>
       <div className='right'>
-        <button onClick={onAboutClick}>About</button>
+        <a>About</a>
       </div>
 
       {open && (
@@ -32,14 +32,14 @@ function Menu({ items, onAboutClick }) {
                 <span className="bar bar1"></span>
                 <span className="bar bar2"></span>
             </button>
-          <div className="center"><a href="/">Home</a></div>
+          <div className="center"><a href="#" onClick={() => setOpen(!open)}>Home</a></div>
           <div className="right">About</div>
           </section>
           {items.map(item =>(
 
             <div>
-                <a href={sluggify(item["Student Name"])}><h3 className={"center "+sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
-                <p className='center'>by {item["Student Name"]}</p>
+                <a href={"#"+sluggify(item["Student Name"])} onClick={() => setOpen(!open)}><h3 className={"center "+sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
+                <p className='center' onClick={() => setOpen(!open)}>by {item["Student Name"]}</p>
                 </a>
             </div>
           ))}
