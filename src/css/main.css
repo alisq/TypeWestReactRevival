@@ -23,11 +23,13 @@
 .hamburger-button.close .bar.bar1 {
   transform-origin: 50% 50%;
   transform: rotate(45deg);
+  background-color: white;
 }
 .hamburger-button.close .bar.bar2 {
   transform-origin: 50% 50%;
   margin-top: -2px;
   transform: rotate(-45deg);
+  background-color: white;
 }
 
 .bar {
@@ -55,6 +57,9 @@
 }
 .menu a {
   color: white;
+}
+.menu .header {
+  border-color: white;
 }
 
 @font-face {

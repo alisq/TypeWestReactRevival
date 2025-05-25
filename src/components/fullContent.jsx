@@ -1,4 +1,5 @@
 import parse from 'html-react-parser';
+import { useEffect } from 'react';
 import { sluggify } from '../functions';
 import Image from './image';
 import LoadFonts from './loadFonts';
@@ -6,6 +7,9 @@ function FullContent({ content, onClose }) {
   //  console.log(content)
 
 
+ useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [content]); // Runs every time a new `content` is loaded
 
   
 
