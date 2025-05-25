@@ -21,6 +21,10 @@ function Teaser({ item, onExpand }) {
   };
 
 
+  const handleDoubleClick = () => {
+    window.location.href = "#"+sluggify(item['Student Name']);
+    };
+
   
   return (
     
@@ -41,6 +45,7 @@ function Teaser({ item, onExpand }) {
                     ref={divRef}
                     contentEditable
                     onClick={handleClick}
+                    onDoubleClick={handleDoubleClick}
                     suppressContentEditableWarning={true}>
                     {item["Homepage Tester Text"]}
                 </div>
