@@ -12,6 +12,15 @@ function FullContent({ content, onClose }) {
   }, [content]); // Runs every time a new `content` is loaded
 
   
+useEffect(()=>{
+    document.title = content["Student Name"]+" | TypeWest 2025 Revivals"
+
+        return () => {
+      // Restore previous title on unmount
+      document.title = "TypeWest 2025 Revivals";
+    };
+})
+
 
   return (
 
