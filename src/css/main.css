@@ -1,3 +1,23 @@
+.header {
+  padding: 1em;
+  display: grid;
+  height: 80px;
+  border-bottom: 1px solid #FF1C17;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.header #menu_button {
+  cursor: pointer;
+}
+.header #menu_button:hover {
+  color: #FF1C17;
+}
+.header a {
+  color: #0f0f0f;
+}
+.header a:hover {
+  color: #FF1C17;
+}
+
 .hamburger-menu {
   position: relative;
 }
@@ -60,6 +80,13 @@
 }
 .menu .header {
   border-color: white;
+}
+
+.menu_font a {
+  color: white;
+}
+.menu_font a:hover {
+  color: #0f0f0f;
 }
 
 @media (max-width: 550px) {
@@ -216,20 +243,6 @@ html, body {
 
 .container {
   max-width: 1400px;
-}
-
-.header {
-  padding: 1em;
-  display: grid;
-  height: 80px;
-  border-bottom: 1px solid #FF1C17;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.header #menu_button {
-  cursor: pointer;
-}
-.header #menu_button:hover {
-  color: #FF1C17;
 }
 
 section.font {

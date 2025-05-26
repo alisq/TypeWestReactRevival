@@ -1,6 +1,36 @@
 @import 'vars';
 
 
+
+
+.header {
+    padding:1em;
+    display:grid;
+    height:80px;
+    border-bottom:1px solid $red;
+    
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    & #menu_button {
+      cursor:pointer;
+
+      &:hover  {
+      color:$red;
+    }
+    }
+
+    & a {
+      color:$black;
+
+      &:hover {
+        color:$red;
+      }
+    }
+
+    
+}
+
+
   .hamburger-menu {
   position: relative;
 
@@ -76,6 +106,16 @@
 
 }
 
+
+.menu_font {
+  & a {
+    color:white;
+
+    &:hover {
+      color:$black;
+    }
+  }
+}
 
 @media (max-width:550px) {
   .header {

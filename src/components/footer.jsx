@@ -1,11 +1,11 @@
-function Footer() {
+import React, { forwardRef } from 'react';
 
+const Footer = forwardRef((props, ref) => {
+  return (
+     <section id="footer" ref={ref}>
+      {/* your footer content */}
+    </section>
+  );
+});
 
-    return (
-
-        <section id="footer"></section>
-
-        
-    )
-}
 export default Footer;

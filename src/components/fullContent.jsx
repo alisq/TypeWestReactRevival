@@ -50,9 +50,19 @@ useEffect(()=>{
                     </div>
                 </div>
             </div>    
+
+
+                          
+                                
+                            
             
                 
-            <div className={"tester_text "+sluggify(content["Student Name"])} contentEditable>
+            <div 
+            className={"tester_text "+sluggify(content["Student Name"])} 
+                                contentEditable
+                                
+                                suppressContentEditableWarning={true}>
+                                
                 {content["Tester Text"]}
             </div>
             

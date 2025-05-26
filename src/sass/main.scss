@@ -27,26 +27,6 @@ html, body {
 
 
 
-
-.header {
-    padding:1em;
-    display:grid;
-    height:80px;
-    border-bottom:1px solid $red;
-    
-    grid-template-columns: 1fr 1fr 1fr;
-    
-    & #menu_button {
-      cursor:pointer;
-
-      &:hover  {
-      color:$red;
-    }
-    }
-
-    
-}
-
 section.font {
     position:relative;
     

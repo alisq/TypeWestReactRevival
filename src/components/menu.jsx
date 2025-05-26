@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { sluggify } from '../functions';
 
 
-function Menu({ items, onAboutClick }) {
+function Menu({ onAboutClick, items }) {
   const [open, setOpen] = useState(false);
     
 
@@ -22,7 +22,7 @@ function Menu({ items, onAboutClick }) {
         <a href="#">TypeWest 2025 Online Cohort</a>
       </div>
       <div className='right'>
-        <a>About</a>
+                  <a onClick={onAboutClick}>About</a>
       </div>
 
       {open && (
@@ -33,12 +33,22 @@ function Menu({ items, onAboutClick }) {
                 <span className="bar bar2"></span>
             </button>
           <div className="center"><a href="#" onClick={() => setOpen(!open)}>Home</a></div>
-          <div className="right">About</div>
+          <div className="right"> 
+           
+            <a onClick={() => {
+                
+                setOpen(!open);
+                onAboutClick();
+              }} >
+                About</a>
+            
+            </div>
+                                  
           </section>
           {items.map(item =>(
 
             <div className="menu_font">
-                <a href={"#"+sluggify(item["Student Name"])} onClick={() => setOpen(!open)}><h3 className={"center "+sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
+                <a href={"#/"+sluggify(item["Student Name"])} onClick={() => setOpen(!open)}><h3 className={"center "+sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
                 <p className='center' onClick={() => setOpen(!open)}>by {item["Student Name"]}</p>
                 </a>
             </div>

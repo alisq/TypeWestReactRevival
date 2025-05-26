@@ -35,11 +35,13 @@ function App() {
       
   }, []);
 
-     const footerRef = useRef(null);
+ const footerRef = useRef(null);
 
-  const scrollToFooter = () => {
-    footerRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+const scrollToFooter = () => {
+  console.log("Scrolling to footer", footerRef.current);
+  footerRef.current?.scrollIntoView({ behavior: 'smooth' });
+};
+
 
 
   return (
@@ -60,8 +62,10 @@ function App() {
             element={<FullContent content={item} />}
           />
         ))}
+
+         
       </Routes>
-        <Footer ref={footerRef} />
+       <Footer ref={footerRef} />
     </Router>
     
     </>
