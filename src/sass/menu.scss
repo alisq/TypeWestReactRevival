@@ -3,6 +3,8 @@
 
   .hamburger-menu {
   position: relative;
+
+
 }
 
 .hamburger-button {
@@ -71,5 +73,33 @@
     & .header {
       border-color:white;
     }
+
+}
+
+
+@media (max-width:550px) {
+  .header {
+   & .menu_font {
+    & .center {
+      display:block;
+    }
+    
+  }
+    
+  }
+  .hamburger-menu  {
+    display:inline;
+    
+  }
+
+  
+  .revivals {
+    display:none;
+  }
+
+  .hamburger-button.close {
+    top:-0.25em;;
+  }
+
 
 }

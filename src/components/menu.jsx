@@ -16,7 +16,7 @@ function Menu({ items, onAboutClick }) {
         <span className="bar"></span>
         
       </button>
-      Revivals
+      <span className="revivals">Revivals</span>
       </div>
       <div className="center">
         <a href="#">TypeWest 2025 Online Cohort</a>
@@ -37,7 +37,7 @@ function Menu({ items, onAboutClick }) {
           </section>
           {items.map(item =>(
 
-            <div>
+            <div className="menu_font">
                 <a href={"#"+sluggify(item["Student Name"])} onClick={() => setOpen(!open)}><h3 className={"center "+sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
                 <p className='center' onClick={() => setOpen(!open)}>by {item["Student Name"]}</p>
                 </a>
