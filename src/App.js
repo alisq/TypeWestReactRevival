@@ -40,7 +40,9 @@ function App() {
 const scrollToFooter = () => {
   // if (!footerRef.current) return;
 
-  const y = footerRef.current.getBoundingClientRect().top + window.pageYOffset - 80;
+   const offset = window.innerWidth < 550 ? 0 : 78; 
+
+  const y = footerRef.current.getBoundingClientRect().top + window.pageYOffset - offset;
   window.scrollTo({ top: y, behavior: 'smooth' });
 };
 
