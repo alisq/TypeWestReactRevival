@@ -53,13 +53,7 @@ useEffect(()=>{
     
                     <div className="one-half column">
                         <h4>About {content["Student Name"]}</h4>                        
-                            {parse(content["Biography"])}
-                            {Array.isArray(content["External Website"]) &&
-  content["External Website"].map((web, i) => (
-    <div key={i}>
-      <a href={web}>{web}</a>
-    </div>
-))}             
+                            {parse(content["Biography"])}                        
                     </div>
                 </div>
             </div>    

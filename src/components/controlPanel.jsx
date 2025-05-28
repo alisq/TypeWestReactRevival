@@ -10,7 +10,7 @@ function ControlPanel({fontSize, setFontSize, leading, setLeading, activeOrienta
     return (
                    
                       <div className="control_panel">
-                        <div class="control_interior">
+                        <div className="control_interior">
 
                   <input
                   className="slider"

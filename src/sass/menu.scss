@@ -17,6 +17,9 @@
     
     grid-template-columns: 1fr 1fr 1fr;
 
+    & .header {
+      background:inherit;
+    }
 
     
     & #menu_button {
@@ -38,6 +41,9 @@
     
 }
 
+.menu_all_fonts {
+  margin-top:100px;
+}
 
   .hamburger-menu {
   position: relative;
@@ -103,6 +109,17 @@
   gap: 0.5em;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   overflow-y:scroll;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 100ms ease-in-out, visibility 100ms ease-in-out;
+  pointer-events: none;
+
+&.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 
     a {
       color:white;
@@ -141,6 +158,10 @@
       display:block;
     }
     
+  }
+
+  .menu_all_fonts {
+    margin-top:0;
   }
     
   }

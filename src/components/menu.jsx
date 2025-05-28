@@ -1,61 +1,60 @@
 import React, { useState } from 'react';
 import { sluggify } from '../functions';
 
-
 function Menu({ onAboutClick, items }) {
   const [open, setOpen] = useState(false);
-    
 
+  const handleToggle = () => {
+    setOpen(!open);
+  };
 
   return (
     <section className='header'>
-    <div className="hamburger-menu">
-      <button className="hamburger-button" onClick={() => setOpen(!open)}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        
-      </button>
-      <span className="revivals">Revivals</span>
+      <div className="hamburger-menu">
+        <button className="hamburger-button" onClick={handleToggle}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+        <span className="revivals">Revivals</span>
       </div>
+
       <div className="center">
         <a href="#">TypeWest 2025 Online Cohort</a>
       </div>
+
       <div className='right'>
-                  <a onClick={onAboutClick}>About</a>
+        <a onClick={onAboutClick}>About</a>
       </div>
 
-      {open && (
-        <nav className="menu">
-            <section className="header">
-            <button className="hamburger-button close" onClick={() => setOpen(!open)}>
-                <span className="bar bar1"></span>
-                <span className="bar bar2"></span>
-            </button>
-          <div className="center"><a href="#" onClick={() => setOpen(!open)}>Home</a></div>
-          <div className="right"> 
-           
+      <nav className={`menu ${open ? 'visible' : 'hidden'}`}>
+        <section className="header">
+          <button className="hamburger-button close" onClick={handleToggle}>
+            <span className="bar bar1"></span>
+            <span className="bar bar2"></span>
+          </button>
+          <div className="center">
+            <a href="#" onClick={handleToggle}>Home</a>
+          </div>
+          <div className="right">
             <a onClick={() => {
-                
-                setOpen(!open);
-                onAboutClick();
-              }} >
-                About</a>
-            
-            </div>
-                                  
-          </section>
-          {items.map(item =>(
+              handleToggle();
+              onAboutClick();
+            }}>About</a>
+          </div>
+        </section>
 
-            <div className="menu_font">
-                <a href={"#/"+sluggify(item["Student Name"])} onClick={() => setOpen(!open)}><h3 className={"center "+sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
-                <p className='center' onClick={() => setOpen(!open)}>by {item["Student Name"]}</p>
-                </a>
+        <div className="menu_all_fonts">
+          {items.map(item => (
+            <div className="menu_font" key={item["Student Name"]}>
+              <a href={`#/${sluggify(item["Student Name"])}`} onClick={handleToggle}>
+                <h3 className={"center " + sluggify(item["Student Name"])}>{item["Revival Name"]}</h3>
+                <p className='center'>by {item["Student Name"]}</p>
+              </a>
             </div>
           ))}
-        </nav>
-      )}
-    
+        </div>
+      </nav>
     </section>
   );
 }
