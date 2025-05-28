@@ -241,6 +241,10 @@ html, body {
   font-size: 20px;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
   max-width: 1400px;
 }
@@ -250,6 +254,9 @@ section.font {
   text-align: center;
   border-bottom: 1px solid #FF1C17;
   overflow: hidden;
+}
+section.font:last-child {
+  border-bottom: none;
 }
 
 .contain-overflow {
@@ -270,12 +277,90 @@ section.font {
   font-size: 6em;
   overflow-x: hidden;
   outline: none;
-  text-align: center;
-  line-height: 1.2;
-  margin: 2rem auto;
+  margin: 0 auto;
   max-width: calc(100vw - 2rem);
   border: 1px solid #FF1C17;
   padding: 2rem;
+}
+.tester_text div {
+  outline: none;
+}
+.tester_text .ttBig {
+  font-size: 6rem;
+}
+.tester_text .ttMed {
+  font-size: 3rem;
+}
+.tester_text .ttSmall {
+  font-size: 1.5rem;
+}
+
+.control_panel {
+  background: #FF1C17;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0 1em;
+  padding: 3px;
+  height: 1.8rem;
+}
+
+.control_interior {
+  display: inline-grid;
+  grid-template-columns: 200px 100px 200px 140px 30px 30px 30px;
+  grid-gap: 0.25rem;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1px;
+  background: black;
+  outline: none;
+  margin-top: 1rem;
+  width: 100%;
+  position: relative;
+  top: -5px;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #0f0f0f;
+  cursor: pointer;
+  border: none;
+}
+.slider::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  background: #0f0f0f;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+}
+
+.text_align {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 7px;
+  cursor: pointer;
+}
+.text_align:hover .bar, .text_align.active .bar {
+  background: white;
+}
+.text_align .bar {
+  width: 22px;
+}
+.text_align .bar:nth-child(2) {
+  width: 18px;
+}
+.text_align.center {
+  align-items: center;
+}
+.text_align.right {
+  align-items: end;
 }
 
 .metadata {
@@ -336,6 +421,10 @@ p {
   margin: 0;
 }
 
+.font_full {
+  margin-bottom: 2em;
+}
+
 .back_forth {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -343,11 +432,16 @@ p {
 }
 
 #footer {
-  background: #FF1C17;
-  color: white;
+  border-top: 1px solid #FF1C17;
+  padding-top: 3em;
   min-height: 100vh;
 }
 
+@media (max-width: 860px) {
+  .control_panel {
+    display: none;
+  }
+}
 /* Larger than phablet */
 @media (max-width: 550px) {
   section.font {
@@ -383,7 +477,7 @@ p {
     display: none;
   }
   .tester_text {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 

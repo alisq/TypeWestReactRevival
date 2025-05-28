@@ -35,13 +35,12 @@ function App() {
       
   }, []);
 
- const footerRef = useRef(null);
+     const footerRef = useRef(null);
 
-const scrollToFooter = () => {
-  console.log("Scrolling to footer", footerRef.current);
-  footerRef.current?.scrollIntoView({ behavior: 'smooth' });
-};
-
+  const scrollToFooter = () => {
+    
+    footerRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
 
   return (
@@ -57,10 +56,17 @@ const scrollToFooter = () => {
         {/* Full Views */}
         {items.map(item => (
           <Route
-            key={item._id}
-            path={`/${sluggify(item['Student Name'])}`}
-            element={<FullContent content={item} />}
-          />
+  key={item._id}
+  path={`/${sluggify(item['Student Name'])}`}
+  element={
+    <FullContent
+      content={item}
+      onClose={() => window.history.back()}
+      onNext={() => {}}
+      onPrev={() => {}}
+    />
+  }
+/>
         ))}
 
          

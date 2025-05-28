@@ -22,14 +22,14 @@ function Teaser({ item, onExpand }) {
 
 
   const handleDoubleClick = () => {
-    window.location.href = "#"+sluggify(item['Student Name']);
+    window.location.href = "#/"+sluggify(item['Student Name']);
     };
 
   
   return (
     
 
-      <section className="font" id="{this.authorID}">
+      <section className="font" id={sluggify(item['Student Name'])}>
         <Link to={`${sluggify(item['Student Name'])}`}>
             <div className="metadata">                 
                 <label className="font_name">{item["Revival Name"]}</label> by <label className="designer_name">{item["Student Name"]}</label>
