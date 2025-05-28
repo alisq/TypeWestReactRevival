@@ -126,14 +126,14 @@ useEffect(()=>{
               </div>
 
 
-              <div className="back_forth">
+              {/* <div className="back_forth">
                   <div>
                       <button onClick={onPrev}>previous project</button>
                   </div>
                   <div className="right">
                       <button onClick={() => { console.log("Next clicked"); onNext(); }}>Next Project</button>
                   </div>
-              </div>
+              </div> */}
            
      </section>
      </>
