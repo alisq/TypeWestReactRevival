@@ -37,10 +37,13 @@ function App() {
 
      const footerRef = useRef(null);
 
-  const scrollToFooter = () => {
-    
-    footerRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+const scrollToFooter = () => {
+  // if (!footerRef.current) return;
+
+  const y = footerRef.current.getBoundingClientRect().top + window.pageYOffset - 80;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+};
+
 
 
   return (

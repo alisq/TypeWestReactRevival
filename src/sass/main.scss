@@ -28,6 +28,9 @@ img {
   max-width:1400px;
 }
 
+.content_list {
+margin-top:80px;
+}
 
 
 section.font {
@@ -259,7 +262,7 @@ p {
   }
 
 
-  @media (max-width:860px) {
+  @media (max-width:820px) {
       .control_panel {
     display:none;
   }
@@ -268,6 +271,10 @@ p {
 
   /* Larger than phablet */
 @media (max-width: 550px) {
+
+  .content_list {
+    margin-top:0;
+  }
 
   section.font {
     text-align:left;
@@ -318,6 +325,13 @@ p {
 
         .tester_text {
         font-size:1.5rem;
+    }
+
+
+    .header .header .right {
+      display:inline-block;
+      margin:0 0.75em;
+      // float:right;
     }
 
   }

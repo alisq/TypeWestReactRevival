@@ -1,8 +1,14 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 1em;
   display: grid;
   height: 80px;
   border-bottom: 1px solid #FF1C17;
+  background: white;
+  z-index: 300;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .header #menu_button {
@@ -90,6 +96,12 @@
 }
 
 @media (max-width: 550px) {
+  .header {
+    position: static;
+  }
+  .header .header {
+    background: rgba(255, 28, 23, 0.9);
+  }
   .header .menu_font .center {
     display: block;
   }
@@ -225,7 +237,9 @@ button:hover {
     padding: 1rem 0;
   }
   h3 {
+    padding-top: 1rem;
     font-size: 2.5rem;
+    line-height: 1;
   }
 }
 *,
@@ -247,6 +261,10 @@ img {
 
 .container {
   max-width: 1400px;
+}
+
+.content_list {
+  margin-top: 80px;
 }
 
 section.font {
@@ -437,13 +455,16 @@ p {
   min-height: 100vh;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 820px) {
   .control_panel {
     display: none;
   }
 }
 /* Larger than phablet */
 @media (max-width: 550px) {
+  .content_list {
+    margin-top: 0;
+  }
   section.font {
     text-align: left;
     position: static;
@@ -478,6 +499,10 @@ p {
   }
   .tester_text {
     font-size: 1.5rem;
+  }
+  .header .header .right {
+    display: inline-block;
+    margin: 0 0.75em;
   }
 }
 

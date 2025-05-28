@@ -4,12 +4,20 @@
 
 
 .header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
     padding:1em;
     display:grid;
     height:80px;
     border-bottom:1px solid $red;
+    background:white;
+    z-index:300;
     
     grid-template-columns: 1fr 1fr 1fr;
+
+
     
     & #menu_button {
       cursor:pointer;
@@ -119,6 +127,15 @@
 
 @media (max-width:550px) {
   .header {
+
+    position:static;
+
+    & .header {
+      background:rgba($red,0.9)
+    }
+
+
+
    & .menu_font {
     & .center {
       display:block;
@@ -138,7 +155,7 @@
   }
 
   .hamburger-button.close {
-    top:-0.25em;;
+    top:-0.25em;
   }
 
 

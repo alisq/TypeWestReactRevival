@@ -26,7 +26,7 @@ function ContentList({ items }) {
 
   return (
     <>
-      <div className="content-list">
+      <div className="content_list">
         {items.map(item => (
           <React.Fragment key={item._id}>
             <LoadFonts font={item['WOFF file']} author={sluggify(item['Student Name'])} />
