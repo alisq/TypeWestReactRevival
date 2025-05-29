@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { sluggify } from '../functions';
 
 function Menu({ onAboutClick, items }) {
@@ -24,7 +25,7 @@ function Menu({ onAboutClick, items }) {
       </div>
 
       <div className='right'>
-        <a onClick={onAboutClick}>About</a>
+        <Link to="/about">About</Link>
       </div>
 
       <nav className={`menu ${open ? 'visible' : 'hidden'}`}>
@@ -37,10 +38,7 @@ function Menu({ onAboutClick, items }) {
             <a href="#" onClick={handleToggle}>Home</a>
           </div>
           <div className="right">
-            <a onClick={() => {
-              handleToggle();
-              onAboutClick();
-            }}>About</a>
+            <Link to="/about" onClick={handleToggle}>About</Link>
           </div>
         </section>
 

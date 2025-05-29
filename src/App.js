@@ -1,84 +1,55 @@
-import React, { useEffect, useState, useRef } from 'react';
+// App.js
+import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './css/normalize.css';
 import './css/skeleton.css';
 import './css/main.css';
 import ContentList from './components/contentList';
 import Menu from './components/menu';
+import About from './components/about';
 import Footer from './components/footer';
-import { shuffle } from './functions';
-
-
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-// } from 'react-router-dom';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-
-
 import FullContent from './components/fullContent';
-import { sluggify } from './functions';
-
-
+import { shuffle, sluggify } from './functions';
+import usePageTracking from './usePageTracking';
+import LoadFonts from './components/loadFonts';
 function App() {
+  usePageTracking(); 
+
   const [items, setItems] = useState([]);
-    const [activeId, setActiveId] = useState(null);
+  
 
   useEffect(() => {
     fetch('https://tw2025.iamasq.works/api/content/items/Revival')
       .then(res => res.json())
-      .then(data => {setItems(data)
- shuffle(data)
-
+      .then(data => {
+        setItems(data);
+        shuffle(data);
       })
       .catch(err => console.error(err));
-      
   }, []);
-
-     const footerRef = useRef(null);
-
-const scrollToFooter = () => {
-  // if (!footerRef.current) return;
-
-   const offset = window.innerWidth < 550 ? 0 : 78; 
-
-  const y = footerRef.current.getBoundingClientRect().top + window.pageYOffset - offset;
-  window.scrollTo({ top: y, behavior: 'smooth' });
-};
-
-
 
   return (
     <>
-    <Router>
-      
-     <Menu onAboutClick={scrollToFooter} items={items}/>
-        
-      <Routes>
-        {/* List View */}
-        <Route path="/" element={<ContentList items={items} />} />
+      <Menu items={items} />
+      {items.map(item=>(
+        <LoadFonts key={'font'+item._id} font={item['WOFF file']} author={sluggify(item['Student Name'])} />
+      ))}
 
-        {/* Full Views */}
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<ContentList items={items} />} />
         {items.map(item => (
           <Route
-  key={item._id}
-  path={`/${sluggify(item['Student Name'])}`}
-  element={
-    <FullContent
-      content={item}
-      onClose={() => window.history.back()}
-      onNext={() => {}}
-      onPrev={() => {}}
-    />
-  }
-/>
+            key={item._id}
+            path={`/${sluggify(item['Student Name'])}`}
+            element={
+              <FullContent content={item} />
+            }
+          />
         ))}
-
-         
       </Routes>
-       <Footer ref={footerRef} />
-    </Router>
-    
+
+      <Footer />
     </>
   );
 }

@@ -7,12 +7,12 @@ import ControlPanel from './controlPanel';
 
 
 
-function FullContent({ content, onClose, onNext, onPrev }) {
+function FullContent({ content }) {
 
 
- const [fontSize, setFontSize] = useState(36);
+ const [fontSize, setFontSize] = useState(window.innerWidth < 550 ? 24 : 78);
     const [leading, setLeading] = useState(12)
-    const [activeOrientation, setActiveOrientation] = useState('left')
+    const [activeOrientation, setActiveOrientation] = useState('center')
 
 
  useEffect(() => {
@@ -96,9 +96,12 @@ useEffect(()=>{
             </div>
             
             <div className="process-images">    
-                {content["Process Images"].map((image, i) =>                 
-                    <Image image={image} key={i}/>              
-                )}
+              {Array.isArray(content["Process Images"]) && content["Process Images"].length > 0 && (
+  content["Process Images"].map((image, i) =>                 
+    <Image image={image} key={i}/>              
+  )
+)}
+
             </div>
             <div className="container">
               <div className="row">
@@ -114,9 +117,13 @@ useEffect(()=>{
           </div>
 
               <div className="process-images">    
-                  {content["Research Images"].map((image, i) =>                 
-                    <Image image={image} key={i}/>              
-                )}
+                              
+                  {Array.isArray(content["Research Images"]) && content["Research Images"].length > 0 && (
+  content["Research Images"].map((image, i) =>                 
+    <Image image={image} key={i}/>              
+  )
+)}
+
               </div>
 
 

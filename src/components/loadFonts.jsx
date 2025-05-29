@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 function LoadFonts(font) {
     
@@ -8,7 +8,9 @@ useEffect(() => {
   style.textContent = `
     @font-face {
       font-family: '${font.font.title}';
-      src: url('fonts/${font.font.path.split("/")[4]}') format('${font.font.mime.split("/")[1]}');
+      src: url('./fonts/${font.font.path.split("/")[4]}') format('${font.font.mime.split("/")[1]}');
+        font-weight: 400;
+  font-style: normal;
     }
 
     .${font.author} {
