@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './css/normalize.css';
 import './css/skeleton.css';
 import './css/main.css';
+import revivals from './revivals.json';
 import ContentList from './components/contentList';
 import Menu from './components/menu';
 import About from './components/about';
@@ -17,16 +18,22 @@ function App() {
 
   const [items, setItems] = useState([]);
   
-
-  useEffect(() => {
-    fetch('https://tw2025.iamasq.works/api/content/items/Revival')
-      .then(res => res.json())
-      .then(data => {
-        setItems(data);
-        shuffle(data);
-      })
-      .catch(err => console.error(err));
+    useEffect(() => {
+    shuffle(revivals)
+      setItems(revivals);
+    
   }, []);
+  // shuffle(items)
+
+  // useEffect(() => {
+  //   fetch('https://tw2025.iamasq.works/api/content/items/Revival')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setItems(data);
+  //       shuffle(data);
+  //     })
+  //     .catch(err => console.error(err));
+  // }, []);
 
   return (
     <>

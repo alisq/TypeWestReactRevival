@@ -14,6 +14,19 @@ function FullContent({ content }) {
     const [leading, setLeading] = useState(12)
     const [activeOrientation, setActiveOrientation] = useState('center')
 
+  const divRef = React.useRef(null);
+
+  const handleClick = () => {
+    
+    const range = document.createRange();
+    const selection = window.getSelection();
+
+    if (divRef.current && selection) {
+      range.selectNodeContents(divRef.current);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  };
 
  useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,11 +34,11 @@ function FullContent({ content }) {
 
   
 useEffect(()=>{
-    document.title = content["Student Name"]+" | TypeWest 2025 Revivals"
+    document.title = content["Student Name"]+" | Type West 2025 Revivals"
 
         return () => {
       // Restore previous title on unmount
-      document.title = "TypeWest 2025 Revivals";
+      document.title = "Type West 2025 Revivals";
     };
 })
 
@@ -72,8 +85,9 @@ useEffect(()=>{
 
 
                 <div    className={"ttBig "+sluggify(content["Student Name"])} 
-                        contentEditable
+                                                contentEditable
                         style={{ fontSize: `${fontSize}px`, lineHeight: `${leading/10}`, textAlign: `${activeOrientation}` }}
+                        onClick={handleClick}
                         suppressContentEditableWarning={true}>                                    
                         {content["Tester Text"]}
                 </div>

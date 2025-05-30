@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Teaser from './teaser';
 import FullContent from './fullContent';
-import LoadFonts from './loadFonts';
-import { sluggify } from '../functions';
 
 function ContentList({ items }) {
   const [activeId, setActiveId] = useState(null);

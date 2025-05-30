@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/2025/revivals/static/css/main.6d84b9b2.css",
+    "main.js": "/2025/revivals/static/js/main.dc3d590d.js",
+    "static/js/453.5c991088.chunk.js": "/2025/revivals/static/js/453.5c991088.chunk.js",
+    "static/media/groupPic2.jpg": "/2025/revivals/static/media/groupPic2.44d29fda39554b5807b3.jpg",
+    "static/media/DuplicateSans-Bold-Web.woff": "/2025/revivals/static/media/DuplicateSans-Bold-Web.5a7cf29d8b3aef9faf40.woff",
+    "static/media/DuplicateSans-RegularItalic-Web.woff": "/2025/revivals/static/media/DuplicateSans-RegularItalic-Web.20848dd78e7d91f9452f.woff",
+    "static/media/DuplicateSans-Regular-Web.woff": "/2025/revivals/static/media/DuplicateSans-Regular-Web.c9c5f4b4aa03803f07f9.woff",
+    "index.html": "/2025/revivals/index.html",
+    "main.6d84b9b2.css.map": "/2025/revivals/static/css/main.6d84b9b2.css.map",
+    "main.dc3d590d.js.map": "/2025/revivals/static/js/main.dc3d590d.js.map",
+    "453.5c991088.chunk.js.map": "/2025/revivals/static/js/453.5c991088.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d84b9b2.css",
+    "static/js/main.dc3d590d.js"
+  ]
+}

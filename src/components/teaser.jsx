@@ -3,23 +3,11 @@ import { sluggify } from '../functions';
 import { Link } from 'react-router-dom';
 
 // Teaser.jsx
-function Teaser({ item, onExpand }) {
+function Teaser({ item }) {
 
 
 
   const divRef = React.useRef(null);
-
-  const handleClick = () => {
-    const range = document.createRange();
-    const selection = window.getSelection();
-
-    if (divRef.current && selection) {
-      range.selectNodeContents(divRef.current);
-      selection.removeAllRanges();
-      selection.addRange(range);
-    }
-  };
-
 
   const handleDoubleClick = () => {
     window.location.href = "#/"+sluggify(item['Student Name']);
@@ -44,7 +32,6 @@ function Teaser({ item, onExpand }) {
                     className={"text "+sluggify(item["Student Name"])} 
                     ref={divRef}
                     contentEditable
-                    onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
                     suppressContentEditableWarning={true}>
                     {item["Homepage Tester Text"]}

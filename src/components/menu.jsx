@@ -21,7 +21,7 @@ function Menu({ onAboutClick, items }) {
       </div>
 
       <div className="center">
-        <a href="#">TypeWest 2025 Online Cohort</a>
+        <a href="#">Type West 2025 Online Cohort</a>
       </div>
 
       <div className='right'>

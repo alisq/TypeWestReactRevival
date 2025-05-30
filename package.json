@@ -1,8 +1,8 @@
 {
-  "name": "r",
+  "name": "Type West 2025 Online Cohort Revivals",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alisq.github.io/TypeWest-2025-T01",
+  "homepage": "https://typewest.letterformarchive.org/2025/revivals/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

@@ -10,10 +10,10 @@ function About(){
     
         <h4>Term 1 Overview</h4>
         <p>
-The revival projects showcased on this website were developed during the first trimester of the 2025 TypeWest Online Program. Over the course of ten weeks, students were tasked with selecting and researching a metal-cast text typeface to digitally revive, engaging with the history, structure, and personality of their chosen type.
+The revival projects showcased on this website were developed during the first trimester of the 2025 Type West Online Program. Over the course of ten weeks, students were tasked with selecting and researching a metal-cast text typeface to digitally revive, engaging with the history, structure, and personality of their chosen type.
 </p>
 <p>
-This work would not have been possible without the generous guidance and insight of the educators, designers, and artists who make TypeWest such a supportive and inspiring community. Their thoughtful critiques, honest feedback, and encouragement were instrumental in helping shape and push our work forward.
+This work would not have been possible without the generous guidance and insight of the educators, designers, and artists who make Type West such a supportive and inspiring community. Their thoughtful critiques, honest feedback, and encouragement were instrumental in helping shape and push our work forward.
 </p>
 <h4>2025 Online Cohort</h4>
 <p>
@@ -38,7 +38,7 @@ Cheers to Term 1!</p>
         </p>
       </div>
       </div>
-      <img src={groupPic} alt="A screenshot from a Zoom meeting with all of the students from the 2025 TypeWest Online Cohort with faculty, T.A.s and guest critics"/>
+      <img src={groupPic} alt="A screenshot from a Zoom meeting with all of the students from the 2025 Type West Online Cohort with faculty, T.A.s and guest critics"/>
       </div>
     </section>
   );
